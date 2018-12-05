@@ -1,7 +1,7 @@
 
 import React, { Component, Fragment } from "react";
 import { Header, Footer } from "./Layouts/index";
-import ConservationView from "./ConservationView";
+import AquaristView from "./AquaristView";
 
 export default class extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class extends Component {
       <Fragment>
         <Header />
 
-        <ConservationView />
+        <AquaristView />
 
         <Footer />
       </Fragment>
