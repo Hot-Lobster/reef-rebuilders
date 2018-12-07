@@ -19,6 +19,7 @@
   "homepage": "https://github.com/olsoa4/reef-rebuilders#readme",
   "dependencies": {
     "@material-ui/core": "^3.6.0",
+    "cassandra-driver": "^3.6.0",
     "express": "^4.16.4"
   }
 }
