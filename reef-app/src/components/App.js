@@ -1,18 +1,19 @@
 
 import React, { Component, Fragment } from "react";
-import { Header, Footer } from "./Layouts/index";
-import AquaristView from "./AquaristView";
+// import { Header, Footer } from "./Layouts/index";
+// import AquaristView from "./AquaristView";
+import Market from "./Market";
 
 export default class extends Component {
   render() {
     return (
-      <Fragment>
-        <Header />
+      // <Fragment>
+      //   <Header />
 
-        <AquaristView />
+        <Market />
 
-        <Footer />
-      </Fragment>
+      //   <Footer />
+      // </Fragment>
     );
   }
 }
