@@ -1,24 +1,27 @@
 import React from "react";
-
+import Header from "../Components/Layouts/Header";
+import Footer from "../Components/Layouts/Footer";
 import {
-    Grid,
-    Paper,
-    Typography,
-    ExpansionPanel,
-    ExpansionPanelSummary,
-    ExpansionPanelDetails,
-    List,
-    ListItem,
-    ListItemText,
-    Divider
+  Grid,
+  Paper,
+  Typography,
+  ExpansionPanel,
+  ExpansionPanelSummary,
+  ExpansionPanelDetails,
+  List,
+  ListItem,
+  ListItemText,
+  Divider
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const style = {
-    Paper: { padding: 20, marginTop: 10, marginBottom: 10, height: 350 }
+  Paper: { padding: 20, marginTop: 10, marginBottom: 10, height: 350 }
 };
 
 export default props => (
+  <div>
+    <Header />
     <Grid container spacing={8}>
       <Grid item xs={6}>
         <Paper style={style.Paper}>
@@ -117,5 +120,6 @@ export default props => (
         </Paper>
       </Grid>
     </Grid>
+    <Footer />
+  </div>
 );
-  
