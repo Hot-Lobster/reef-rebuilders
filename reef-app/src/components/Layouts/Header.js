@@ -1,30 +1,58 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Button, Grid } from "@material-ui/core/";
+import { AppBar, withStyles, Toolbar, Button, IconButton } from "@material-ui/core/";
+import MenuIcon from "@material-ui/icons/Menu";
+import { Link } from "react-router-dom";
 
-export default props => (
-  <AppBar position="static">
-    <Toolbar>
-      <Grid
-        justify="space-between"
-        container
-        spacing={24}
-      >
-        <Grid item>
-          <Typography variant="headline" color="inherit">
-            Coral Database
-          </Typography>
-        </Grid>
-        <Grid item>
-          <div>
-            <Button
-              style={{ textAlign: "right", margin: "auto" }}
-              color="inherit"
-            >
-              Log out
-            </Button>
-          </div>
-        </Grid>
-      </Grid>
-    </Toolbar>
-  </AppBar>
-);
+const styles = theme => ({
+  appBar: {
+    position: "relative"
+  },
+  root: {
+    flexGrow: 1
+  },
+  grow: {
+    flexGrow: 1
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20
+  },
+  icon: {
+    marginRight: theme.spacing.unit * 2
+  },
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing.unit * 6
+  }
+});
+
+function Header(props) {
+  const { classes } = props;
+
+  return (
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton
+          className={classes.menuButton}
+          color="inherit"
+          aria-label="Menu"
+        >
+          <MenuIcon />
+        </IconButton>
+        <Button color="inherit">
+          <Link to="/">
+            Market
+          </Link>
+        </Button>
+        <Button color="inherit">
+          <Link to="/user">
+            Profile
+          </Link>
+        </Button>
+        <Button color="inherit">Log Out</Button>
+      </Toolbar>
+    </AppBar>
+  ); 
+};
+
+export default withStyles(styles)(Header);
