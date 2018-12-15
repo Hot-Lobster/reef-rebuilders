@@ -1,11 +1,11 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
-var UserSchema = new Schema({
+const UserSchema = new Schema({
   username: {
     type: String,
     required: true
@@ -16,36 +16,37 @@ var UserSchema = new Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   posts: [
-      {
-        _id: {
-            type: String,
-            required: true
-        },
-        coralType: {
-            type: String,
-            required: true
-        },        
-        numFrags: {
-            type: String,
-            required: true
-        },
-        image: {
-            type: String,
-            required: true
-        },                
-        description: {
-            type: String, 
-            required: true
-        }        
+    {
+      _id: {
+        type: String,
+        required: true
+      },
+      coralType: {
+        type: String,
+        required: true
+      },
+      numFrags: {
+        type: String,
+        required: true
+      },
+      image: {
+        type: String,
+        required: true
+      },
+      description: {
+        type: String,
+        required: true
       }
+    }
   ]
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var User = mongoose.model("User", UserSchema);
+const User = mongoose.model("User", UserSchema);
 
 // Export the User model
 module.exports = User;
