@@ -40,6 +40,16 @@ function Header(props) {
           <MenuIcon />
         </IconButton>
         <Button color="inherit">
+          <Link to="/mainlayout">
+            Home
+          </Link>
+        </Button>
+        <Button color="inherit">
+          <Link to="/signin">
+            Sign In
+          </Link>
+        </Button>
+        <Button color="inherit">
           <Link to="/">
             Market
           </Link>

@@ -43,6 +43,9 @@ const styles = theme => ({
   submit: {
     marginTop: theme.spacing.unit * 3,
   },
+  noAccount: {
+    marginTop: theme.spacing.unit * 3,
+  }
 });
 
 function SignIn(props) {
@@ -79,6 +82,15 @@ function SignIn(props) {
             className={classes.submit}
           >
             Sign in
+          </Button>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="secondary"
+            className={classes.noAccount}
+          >
+            Don't have an account
           </Button>
         </form>
       </Paper>
