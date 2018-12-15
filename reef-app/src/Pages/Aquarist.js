@@ -12,17 +12,23 @@ import {
   Button
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import CoralForm from '../Components/CoralForm';
 
 const style = {
-  Paper: { padding: 20, marginTop: 10, marginBottom: 10, height: 350 }
+  Paper: { padding: 20, marginTop: 10, marginBottom: 5, marginLeft: 10, marginRight: 10, height: 350 },
+  profilePaper: { padding: 20, marginTop: 10, marginBottom: 5, marginLeft: 10, marginRight: 5, height: 350 },
+  coralForm: { padding: 20, marginTop: 10, marginBottom: 5, marginRight: 10, height: 350}  
 };
+
 
 export default props => (
   <div>
     <Header />
+
+  {/* This is the profile information */}
     <Grid container spacing={8}>
       <Grid item xs={4}>
-        <Paper style={style.Paper}>
+        <Paper style={style.profilePaper}>
           <img
             src="https://lh3.googleusercontent.com/bGHzUDV3HVhudXA7mNWQkDcpn4SwgIWlRjBxrhahcR0kgsjWPEIr90D7zvJj3G9wVLARHns=s85"
             alt="Profile pic"
@@ -32,73 +38,39 @@ export default props => (
           <Typography variant="p">paypal name</Typography>
         </Paper>
       </Grid>
-      <Grid item xs={4}>
-        <Paper style={style.Paper}>
-          <Typography variant="h4">Your Fragments</Typography>
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>Aplysina Fistularis</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <img
-                style={{ maxHeight: 100 }}
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt4GJU40PbHF6-Y4Gqs655smkFEzG4lqMYNUMo6qPU0A-ZVCpGMg"
-                alt="Coral example"
-              />
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>Acropora</Typography>
-            </ExpansionPanelSummary>
-          </ExpansionPanel>
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>Porites</Typography>
-            </ExpansionPanelSummary>
-          </ExpansionPanel>
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>Galaxea</Typography>
-            </ExpansionPanelSummary>
-          </ExpansionPanel>
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>Fungia</Typography>
-            </ExpansionPanelSummary>
-          </ExpansionPanel>
+  {/* End of profile information */}
+
+  {/* This is the add coral form */}
+      <Grid item xs={8}>
+        <Paper style={style.coralForm}>
+          <Typography variant="h4">Post New Fragments!</Typography>
+          <Typography variant="subtitle1">
+            Fill out the form to offer new fragments for buyers to view:
+          </Typography>
+          <CoralForm />
+          <label htmlFor="contained-button-file">
+            <Button variant="contained" component="span" className="">
+              Upload Image
+            </Button>
+          </label>
         </Paper>
       </Grid>
-      <Grid item xs={4}>
+    {/* End of add coral form */}
+
+   
+
+    </Grid>
+    <Grid container spacing={0}>
+      <Grid item xs={12}>
         <Paper style={style.Paper}>
-          <Typography variant="h4">Add Coral Fragments!</Typography>
-          <Typography variant="subtitle1">
-            Fill out the form to offer new fragments for conservationists to
-            request.
+          <Typography variant="h1">
+            
           </Typography>
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>Add Coral</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <TextField
-                required
-                id="standard-required"
-                label="Required"
-                defaultValue="Coral Genus"
-                className=""
-                margin="normal"
-              />
-              <label htmlFor="contained-button-file">
-                <Button variant="contained" component="span" className="">
-                  Upload Image
-                </Button>
-              </label>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
         </Paper>
       </Grid>
     </Grid>
+
+
     <Footer />
   </div>
 );
