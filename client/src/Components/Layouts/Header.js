@@ -59,6 +59,11 @@ function Header(props) {
             Profile
           </Link>
         </Button>
+        <Button color="inherit">
+          <Link to="/createnewaccount">
+            Sign Up
+          </Link>
+        </Button>
         <Button color="inherit">Log Out</Button>
       </Toolbar>
     </AppBar>
