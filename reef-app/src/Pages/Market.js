@@ -12,6 +12,12 @@ import { withStyles } from "@material-ui/core/styles";
 import Header from "../Components/Layouts/Header";
 // import Footer from "../Components/Layouts/Footer";
 
+import { FilePond, registerPlugin } from 'react-filepond';
+import 'filepond/dist/filepond.min.css';
+import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
+import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css';
+registerPlugin(FilePondPluginImagePreview);
+
 const styles = theme => ({
   appBar: {
     position: "relative"
@@ -100,6 +106,9 @@ function Market(props) {
             >
               Featured Coral
             </Typography>
+              
+            <FilePond/>
+            
             <div className={classes.heroButtons}>
               <Grid container spacing={16} justify="center">
                 <Grid item>
