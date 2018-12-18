@@ -5,6 +5,7 @@ import Market from "../Pages/Market";
 import Mainlayout from "../Pages/Mainlayout";
 import SignIn from "../Pages/SignIn";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import CreateNewAccount from "../Pages/CreateNewAccount";
 
 export default class extends Component {
   render() {
@@ -16,6 +17,7 @@ export default class extends Component {
           <Route exact path="/coral" component={Coral} />
           <Route exact path="/mainlayout" component={Mainlayout} />
           <Route exact path="/signin" component={SignIn} />
+          <Route exact path="/createnewaccount" component={CreateNewAccount} />
         </Switch>
       </Router>
 
