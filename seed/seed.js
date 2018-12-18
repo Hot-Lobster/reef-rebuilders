@@ -4,8 +4,8 @@
     "email": "asd@123.com",
     "posts": [
             {
-                "_id": "",
-                "coralType":"coralType",                              
+                "_id": "tabling acropora",
+                "coralType":"",                              
                 "numFrags":7,
                 "image":"https://i.pinimg.com/736x/9d/ca/ad/9dcaadd3b753d18fa9959097d5cb73ab.jpg",
                 "description":"description of some sort"
@@ -20,7 +20,7 @@
     "posts": [
             {
                 "_id": "",
-                "coralType":"coralType",
+                "coralType":"tabling acropora",
                 "numFrags":7,
                 "image":"https://i.pinimg.com/736x/0d/77/43/0d77435b785d4a9a0391c0eed37bf50a.jpg",
                 "description":"description of some sort"      
@@ -51,7 +51,7 @@
     "posts": [
             {
                 "_id": "",
-                "coralType":"coralType",
+                "coralType":"branching acropora",
                 "numFrags":7,
                 "image":"https://i.pinimg.com/736x/b5/33/26/b53326cfdeb7be1538aad8abee650103.jpg",
                 "description":"description of some sort"   
@@ -67,7 +67,7 @@
     "posts": [
             {
                 "_id": "",
-                "coralType":"coralType",
+                "coralType":"zoanthid",
                 "numFrags":7,
                 "image":"https://i.pinimg.com/originals/5d/0c/19/5d0c190033554864c2a3ac913aa8341e.jpg",
                 "description":"description of some sort"
@@ -82,7 +82,7 @@
     "posts": [
             {   
                 "_id": "",
-                "coralType":"coralType",
+                "coralType":"zoanthid",
                 "numFrags":1,
                 "image":"https://i.pinimg.com/564x/0a/f0/38/0af03861bc28b309336597748c3787ab.jpg",
                 "description":"description of some sort"
@@ -97,7 +97,7 @@
     "posts": [
             {
                 "_id": "",
-                "coralType": "kjsdnf",
+                "coralType": "tabling acropora",
                 "numFrags": 7,
                 "image":"https://i.pinimg.com/736x/17/3c/28/173c28c4dbc607086078e5eb57ecc90a--coral-frags-coral-reefs.jpg",
                 "description":"description of some sort"
