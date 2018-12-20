@@ -106,9 +106,9 @@ function Market(props) {
             >
               Featured Coral
             </Typography>
-              
+
             <FilePond/>
-            
+
             <div className={classes.heroButtons}>
               <Grid container spacing={16} justify="center">
                 <Grid item>
