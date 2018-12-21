@@ -2,9 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -12,11 +9,10 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
-import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Header from "../Components/Layouts/Header";
 import Footer from "../Components/Layouts/Footer";
-import img from '../Components/img.jpg';
+import gnips from '../Images/gnips.jpg';
 
 const styles = theme => ({
   layout: {
@@ -37,7 +33,7 @@ const styles = theme => ({
   },
   mainFeaturedPost: {
     // backgroundImage: `url(https://cdn.pixabay.com/photo/2017/09/13/15/50/coral-2745956_960_720.jpg)`,
-    backgroundImage: `url(${img})`,
+    backgroundImage: `url(${gnips})`,
     height: '500px', 
     backgroundColor: theme.palette.grey[800],
     backgroundPosition: 'center',
