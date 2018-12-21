@@ -14,6 +14,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
+import Header from "../Components/Layouts/Header";
 
 
 const styles = theme => ({
@@ -98,27 +99,9 @@ function Blog(props) {
 
   return (
     <React.Fragment>
+       <Header />
       <CssBaseline />
       <div className={classes.layout}>
-        <Toolbar className={classes.toolbarMain}>
-          <Button size="small">Cart</Button>
-          <Typography
-            component="h2"
-            variant="h5"
-            color="inherit"
-            align="center"
-            noWrap
-            className={classes.toolbarTitle}
-          >
-            Reef Rebuilders
-          </Typography>
-          <IconButton>
-            <SearchIcon />
-          </IconButton>
-          <Button variant="outlined" size="small">
-            Sign In
-          </Button>
-        </Toolbar>
         <main>
           {/* Main featured post */}
           <Paper className={classes.mainFeaturedPost}>

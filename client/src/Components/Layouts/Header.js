@@ -7,9 +7,11 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import Divider from '@material-ui/core/Divider';
+import Typography from '@material-ui/core/Typography';
+import InputBase from '@material-ui/core/InputBase';
+import SearchIcon from '@material-ui/icons/Search';
+import { fade } from '@material-ui/core/styles/colorManipulator';
+
 
 const styles = theme => ({
   appBar: {
@@ -28,6 +30,14 @@ const styles = theme => ({
     marginLeft: -12,
     marginRight: 20
   },
+  title: {
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+    flexGrow: 1,
+    justifyContent: 'center',
+  },
   icon: {
     marginRight: theme.spacing.unit * 2
   },
@@ -44,15 +54,58 @@ const styles = theme => ({
   },
   nav: {
     width: 250,
-
+    display:'flex',
+    flexDirection:'column',
+   
+  },
+  listItem: {
+    fontStyle: 'bold',
+    textDecoration: 'none',
+  },
+  search: {
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
+    marginRight: theme.spacing.unit * 2,
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing.unit * 3,
+      width: 'auto',
+    },
+  },
+  searchIcon: {
+    width: theme.spacing.unit * 9,
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputRoot: {
+    color: 'inherit',
+    width: '100%',
+  },
+  inputInput: {
+    paddingTop: theme.spacing.unit,
+    paddingRight: theme.spacing.unit,
+    paddingBottom: theme.spacing.unit,
+    paddingLeft: theme.spacing.unit * 10,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: 200,
+    },
   },
   //This will make the app bar appear below the bar
   paper: {
     height: 'calc(100% - 64px)',
     top: 64,
   }
-  //Add this to <drawer/>
-  //classes={{paper: classes.paper}}
 });
 
 class Header extends React.Component {
@@ -67,28 +120,20 @@ class Header extends React.Component {
     });
   }
 
-  // sideList(classes){
-  //   return (
-  //   <div className={classes.list}>
-  //     <List>
-  //     <Divider />
-  //       {['Sign In', 'Sign Up', 'Marketplace', 'Profile', 'Logout'].map((text, index) => (
-  //         <ListItem button key={text}>
-  //           <ListItemText primary={text} />
-  //         </ListItem>
-  //       ))}
-  //     </List>
-  //     <Divider />
-  //   </div>
-  // )}
-
   render(){
     const { classes } = this.props;
 
     return (
       <AppBar position="static">
         <Toolbar>
-        <Button onClick={() => this.toggleDrawer('left', true)}>Open Left</Button>
+        <IconButton
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="Menu"
+            onClick={() => this.toggleDrawer('left', true)}
+          >
+            <MenuIcon />
+          </IconButton>
         <Drawer classes={{ paper: classes.paper }} open={this.state.left} onClose={() => this.toggleDrawer('left', false)}>
             <div
               tabIndex={0}
@@ -98,52 +143,57 @@ class Header extends React.Component {
             >
               {/* {this.sideList(classes)} */}
               <List className={classes.nav}>
-                <ListItem button>
+                <ListItem className={classes.listItem}>
                   <Link to="/mainlayout">
                     <ListItemText primary="Home" />
                   </Link>
-                    <ListItemIcon>
-                    </ListItemIcon>
-                
                 </ListItem>
-
+                <ListItem className={classes.listItem}>
+                    <Link to="/signin">
+                    <ListItemText primary="Sign In" />
+                  </Link>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Link to="/createnewaccount">
+                    <ListItemText primary="Sign Up" />
+                  </Link>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Link to="/">
+                    <ListItemText primary="Market" />
+                  </Link>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Link to="/user">
+                    <ListItemText primary="Profile" />
+                  </Link>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Link to="/signin">
+                    <ListItemText primary="Logout" />
+                  </Link>
+                </ListItem>
               </List>
-
             </div>
           </Drawer>
-          <IconButton
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="Menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Button color="inherit">
-            <Link to="/mainlayout">
-              Home
-            </Link>
-          </Button>
-          <Button color="inherit">
-            <Link to="/signin">
-              Sign In
-            </Link>
-          </Button>
-          <Button color="inherit">
-            <Link to="/">
-              Market
-            </Link>
-          </Button>
-          <Button color="inherit">
-            <Link to="/user">
-              Profile
-            </Link>
-          </Button>
-          <Button color="inherit">
-            <Link to="/createnewaccount">
-              Sign Up
-            </Link>
-          </Button>
-          <Button color="inherit">Log Out</Button>
+          {/* The title of our website */}
+          <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+              Reef Rebuilders
+          </Typography>
+          {/* This is the search bar */}
+              <div className={classes.search}>
+                <div className={classes.searchIcon}>
+                  <SearchIcon />
+                </div>
+                <InputBase
+                  placeholder="Search…"
+                  classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput,
+                  }}
+                />
+              </div>
+            
         </Toolbar>
       </AppBar>
       ); 
