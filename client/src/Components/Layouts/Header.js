@@ -143,15 +143,15 @@ class Header extends React.Component {
                   </ListItemLink>
                   <ListItemLink href="/signin">
                     <ListItemText primary="Sign In" />
-                  </ListItemLink>
-                  <ListItemLink href="/createnewaccount">
-                    <ListItemText primary="Sign Up" />
-                  </ListItemLink>
+                  </ListItemLink>                 
                   <ListItemLink href="/">
                     <ListItemText primary="Market" />
                   </ListItemLink>
                   <ListItemLink href="/user">
                     <ListItemText primary="Profile" />
+                  </ListItemLink>
+                  <ListItemLink href="/createnewaccount">
+                    <ListItemText primary="Sign Up" />
                   </ListItemLink>
                   <ListItemLink href="/mainlayout">
                     <ListItemText primary="Logout" />

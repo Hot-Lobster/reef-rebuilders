@@ -15,7 +15,8 @@ import Hidden from '@material-ui/core/Hidden';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Header from "../Components/Layouts/Header";
-
+import Footer from "../Components/Layouts/Footer";
+import img from '../Components/img.jpg';
 
 const styles = theme => ({
   layout: {
@@ -35,7 +36,8 @@ const styles = theme => ({
     flex: 1,
   },
   mainFeaturedPost: {
-    backgroundImage: `url(https://cdn.pixabay.com/photo/2017/09/13/15/50/coral-2745956_960_720.jpg)`,
+    // backgroundImage: `url(https://cdn.pixabay.com/photo/2017/09/13/15/50/coral-2745956_960_720.jpg)`,
+    backgroundImage: `url(${img})`,
     height: '500px', 
     backgroundColor: theme.palette.grey[800],
     backgroundPosition: 'center',
@@ -43,6 +45,7 @@ const styles = theme => ({
     backgroundSize: 'cover',
     color: theme.palette.common.white,
     marginBottom: theme.spacing.unit * 4,
+    marginTop: 20, 
   },
   mainFeaturedPostContent: {
     padding: `${theme.spacing.unit * 6}px`,
@@ -165,14 +168,7 @@ function Blog(props) {
         </main>
       </div>
       {/* Footer */}
-      <footer className={classes.footer}>
-        {/* <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography> */}
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Copyright @ Reef Rebuilders 2018
-        </Typography>
-      </footer>
+      <Footer />
       {/* End footer */}
     </React.Fragment>
   );
