@@ -64,7 +64,15 @@ function CreateNewAccount (props) {
             <Input id="email" name="email" autoComplete="email" autoFocus />
           </FormControl>
           <FormControl margin="normal" required fullWidth>
+            <InputLabel htmlFor="email">Username</InputLabel>
+            <Input id="username" name="username" autoFocus />
+          </FormControl>
+          <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="password">Password</InputLabel>
+            <Input name="password" type="password" id="password" autoComplete="current-password" />
+          </FormControl>
+          <FormControl margin="normal" required fullWidth>
+            <InputLabel htmlFor="password">Confirm Password</InputLabel>
             <Input name="password" type="password" id="password" autoComplete="current-password" />
           </FormControl>
           <Button

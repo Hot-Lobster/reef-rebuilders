@@ -7,12 +7,13 @@ export default props => (
   <AppBar position="static">
     <Toolbar>
       <Typography
-        variant="h6"
+        variant="h8"
         color="inherit"
-        style={{ textAlign: "center", margin: "auto" }}
+        style={{ textAlign: "center", margin: "auto",}}
       >
-        Reef Rebuilders 2018
+         Reef Rebuilders  Inc. &copy; 2018, All Rights Reserved 
       </Typography>
     </Toolbar>
   </AppBar>
 );
+

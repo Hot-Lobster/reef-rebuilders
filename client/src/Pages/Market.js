@@ -10,7 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import Header from "../Components/Layouts/Header";
-// import Footer from "../Components/Layouts/Footer";
+import Footer from "../Components/Layouts/Footer";
 
 const styles = theme => ({
   appBar: {
@@ -147,19 +147,7 @@ function Market(props) {
         </div>
       </main>
       {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Reef Rebuilders 2018
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Rebuilding Coral Reefs
-        </Typography>
-      </footer>
+      <Footer />
       {/* End footer */}
     </React.Fragment>
   );
