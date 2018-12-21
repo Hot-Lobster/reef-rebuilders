@@ -13,19 +13,13 @@ import {
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import CoralForm from '../Components/CoralForm';
-
-import { FilePond, File, registerPlugin } from 'react-filepond';
-import 'filepond/dist/filepond.min.css';
-import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
-import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css';
-registerPlugin(FilePondPluginImagePreview);
+import FilePondInput from '../Components/FilePondInput';
 
 const style = {
   Paper: { padding: 20, marginTop: 10, marginBottom: 5, marginLeft: 10, marginRight: 10, height: 350 },
   profilePaper: { padding: 20, marginTop: 10, marginBottom: 5, marginLeft: 10, marginRight: 5, height: 350 },
   coralForm: { padding: 20, marginTop: 10, marginBottom: 5, marginRight: 10, height: 350 }
 };
-
 
 export default props => (
   <div>
@@ -54,17 +48,8 @@ export default props => (
             Fill out the form to offer new fragments for buyers to view:
           </Typography>
           <CoralForm />
-
-          <FilePond ref={ref => this.pond = ref}
-            server={{ process: this.handleProcessing.bind(this) }}
-            oninit={() => this.handleInit()}>
-
-            {this.state.files.map(file => (
-              <File key={file} source={file} />
-            ))}
-
-          </FilePond>
-
+          <FilePondInput />
+  
           <label htmlFor="contained-button-file">
             <Button variant="contained" component="span" className="">
               Upload Image

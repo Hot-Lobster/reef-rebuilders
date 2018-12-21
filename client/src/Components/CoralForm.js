@@ -48,7 +48,19 @@ class TextFields extends React.Component {
     age: '',
     multiline: 'Controlled',
     currency: 'EUR',
+    files: []
   };
+
+  handleInit() {
+    // handle init file upload here
+    console.log('now initialised', this.pond);
+  }
+
+  handleProcessing(fieldName, file, metadata, load, error, progress, abort) {
+    // handle file upload here
+    console.log(" handle file upload here");
+    console.log(file);
+  }
 
   handleChange = name => event => {
     this.setState({
