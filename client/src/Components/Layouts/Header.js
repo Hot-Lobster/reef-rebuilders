@@ -45,22 +45,12 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing.unit * 6
   },
-  list: {
-    width: 250,
-    paddingLeft: 12, 
-  },
-  fullList: {
-    width: 'auto',
-  },
   nav: {
-    width: 250,
+    width: 175,
     display:'flex',
     flexDirection:'column',
-   
-  },
-  listItem: {
-    fontStyle: 'bold',
-    textDecoration: 'none',
+    marginLeft: 20,
+    paddingRight: 20, 
   },
   search: {
     position: 'relative',
@@ -108,6 +98,10 @@ const styles = theme => ({
   }
 });
 
+function ListItemLink(props) {
+  return <ListItem button component="a" {...props} />;
+}
+
 class Header extends React.Component {
 
   state = {
@@ -141,39 +135,29 @@ class Header extends React.Component {
               onClick={() => this.toggleDrawer('left', false)}
               onKeyDown={() => this.toggleDrawer('left', false)}
             >
-              {/* {this.sideList(classes)} */}
-              <List className={classes.nav}>
-                <ListItem className={classes.listItem}>
-                  <Link to="/mainlayout">
-                    <ListItemText primary="Home" />
-                  </Link>
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                    <Link to="/signin">
+            {/* These are our NAV links */}
+              <div>
+                <List className={classes.nav}>
+                  <ListItemLink href="/mainlayout">
+                    <ListItemText className={classes.listItem} primary="Home" />
+                  </ListItemLink>
+                  <ListItemLink href="/signin">
                     <ListItemText primary="Sign In" />
-                  </Link>
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                  <Link to="/createnewaccount">
+                  </ListItemLink>
+                  <ListItemLink href="/createnewaccount">
                     <ListItemText primary="Sign Up" />
-                  </Link>
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                  <Link to="/">
+                  </ListItemLink>
+                  <ListItemLink href="/">
                     <ListItemText primary="Market" />
-                  </Link>
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                  <Link to="/user">
+                  </ListItemLink>
+                  <ListItemLink href="/user">
                     <ListItemText primary="Profile" />
-                  </Link>
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                  <Link to="/signin">
+                  </ListItemLink>
+                  <ListItemLink href="/mainlayout">
                     <ListItemText primary="Logout" />
-                  </Link>
-                </ListItem>
-              </List>
+                  </ListItemLink>
+                </List>
+              </div>
             </div>
           </Drawer>
           {/* The title of our website */}
