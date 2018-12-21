@@ -29,6 +29,13 @@ class FilePondInput extends React.Component {
 
     firebase.initializeApp(config);
 
+    firebase.auth().signInAnonymously().catch((error) => {
+      console.log(error.message);
+      this.setState({
+        message: `Authentication error : ${error.code} : ${error.message}`
+      });
+    });
+
     console.log(this.props, this.state);
   }
 
@@ -43,8 +50,9 @@ class FilePondInput extends React.Component {
     console.log(file);
 
     const fileUpload = file;
-    const storageRef = firebase.storage().ref(`filepond/${file.name}`);
-    const task = storageRef.put(fileUpload)
+    const storageRef = firebase.storage().ref(`filepond/${file.name}`);    
+    
+    const task = storageRef.put(fileUpload);
 
     task.on(`state_changed`, (snapshot) => {
       console.log(snapshot.bytesTransferred, snapshot.totalBytes)
@@ -55,13 +63,14 @@ class FilePondInput extends React.Component {
       })
     }, (error) => {
       //Error
+      console.log(error);
       this.setState({
-        messag: `Upload error : ${error.message}`
+        message: `Upload error : ${error.message}`
       })
     }, () => {
       //Success
       this.setState({
-        messag: `Upload Success`,
+        message: `Upload Success`,
         picture: task.snapshot.downloadURL
       })
 
@@ -72,7 +81,6 @@ class FilePondInput extends React.Component {
           size: metadata.size,
           contentType: metadata.contentType,
           fullPath: metadata.fullPath,
-          downloadURLs: metadata.downloadURLs[0],
         }
 
         const databaseRef = firebase.database().ref('/filepond');
@@ -82,11 +90,12 @@ class FilePondInput extends React.Component {
         });
 
       }).catch(function (error) {
-        this.setState({
-          messag: `Upload error : ${error.message}`
-        })
+        // this.setState({
+        //   message: `Upload error : ${error.message}`
+        // })
+        console.log(error);
       });
-    })
+    });
   }
 
   render() {
