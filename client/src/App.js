@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Aquarist from "../Pages/Aquarist";
-import Coral from "../Pages/Coral";
-import Market from "../Pages/Market";
-import Mainlayout from "../Pages/Mainlayout";
-import SignIn from "../Pages/SignIn";
+import Aquarist from "./Pages/Aquarist";
+import Coral from "./Pages/Coral";
+import Market from "./Pages/Market";
+import Mainlayout from "./Pages/Mainlayout";
+import SignIn from "./Pages/SignIn";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import CreateNewAccount from "../Pages/CreateNewAccount";
+import CreateNewAccount from "./Pages/CreateNewAccount";
 
 export default class extends Component {
   render() {
