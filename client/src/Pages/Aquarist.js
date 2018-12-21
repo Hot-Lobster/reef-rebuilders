@@ -18,7 +18,20 @@ import FilePondInput from '../Components/FilePondInput';
 const style = {
   Paper: { padding: 20, marginTop: 10, marginBottom: 5, marginLeft: 10, marginRight: 10, height: 350 },
   profilePaper: { padding: 20, marginTop: 10, marginBottom: 5, marginLeft: 10, marginRight: 5, height: 350 },
-  coralForm: { padding: 20, marginTop: 10, marginBottom: 5, marginRight: 10, height: 350 }
+  coralForm: { padding: 20, marginTop: 10, marginBottom: 5, marginRight: 5, height: 350}, 
+  imgPaper: { 
+    padding: 20,
+    marginTop: 10,
+    marginBottom: 5,
+    marginLeft: 0,
+    marginRight: 5, 
+    height: 350,
+    backgroundImage: `url(https://images.pexels.com/photos/920160/pexels-photo-920160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)`,
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover'
+  }
+
 };
 
 export default props => (
@@ -40,8 +53,8 @@ export default props => (
       </Grid>
       {/* End of profile information */}
 
-      {/* This is the add coral form */}
-      <Grid item xs={8}>
+  {/* This is the add coral form */}
+      <Grid item xs={4}>
         <Paper style={style.coralForm}>
           <Typography variant="h4">Post New Fragments!</Typography>
           <Typography variant="subtitle1">
@@ -57,8 +70,12 @@ export default props => (
           </label>
         </Paper>
       </Grid>
-      {/* End of add coral form */}
-
+    {/* End of add coral form */}
+    <Grid item xs={4}>
+        <Paper style={style.imgPaper}>
+         
+        </Paper>
+      </Grid>
 
 
     </Grid>
