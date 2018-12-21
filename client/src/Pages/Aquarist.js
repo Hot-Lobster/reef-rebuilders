@@ -5,19 +5,44 @@ import {
   Grid,
   Paper,
   Typography,
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
+  Card,
+  CardMedia,
+  CardContent,
   TextField,
-  Button
+  Button,
+  withStyles,
+  Avatar,
 } from "@material-ui/core";
+import PropTypes from 'prop-types';
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import CoralForm from '../Components/CoralForm';
 
 const style = {
-  Paper: { padding: 20, marginTop: 10, marginBottom: 5, marginLeft: 10, marginRight: 10, height: 350 },
+  Paper: { padding: 20, marginTop: 10, marginBottom: 5, marginLeft: 10, marginRight: 10 },
   profilePaper: { padding: 20, marginTop: 10, marginBottom: 5, marginLeft: 10, marginRight: 5, height: 350 },
-  coralForm: { padding: 20, marginTop: 10, marginBottom: 5, marginRight: 5, height: 350}, 
+  coralForm: { padding: 20, marginTop: 10, marginBottom: 5, marginRight: 5, height: 350},
+  avatar: {margin: 10, width: 100, height: 100}, 
+  cardGrid: {
+    padding: 10
+  },
+  grid: {
+    marginTop: 20,
+    marginBottom: 20
+
+  },
+  card: {
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    marginLeft: 20,
+    marginRight: 20
+  },
+  cardMedia: {
+    paddingTop: "56.25%" // 16:9,
+  },
+  cardContent: {
+    flexGrow: 1
+  },
   imgPaper: { 
     padding: 20,
     marginTop: 10,
@@ -34,61 +59,79 @@ const style = {
 };
 
 
-export default props => (
-  <div>
-    <Header />
+function Aquarist(props) {
+  const { classes } = props;
+  const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-  {/* This is the profile information */}
-    <Grid container spacing={8}>
-      <Grid item xs={4}>
-        <Paper style={style.profilePaper}>
-          <img
-            src="https://lh3.googleusercontent.com/bGHzUDV3HVhudXA7mNWQkDcpn4SwgIWlRjBxrhahcR0kgsjWPEIr90D7zvJj3G9wVLARHns=s85"
-            alt="Profile pic"
-          />
-          <Typography variant="h6">Aquarist1</Typography>
-          <Typography variant="p">email@gmail.com</Typography>
-          <Typography variant="p">paypal name</Typography>
-        </Paper>
-      </Grid>
-  {/* End of profile information */}
+  return (
+    <React.Fragment>
+      <div>
+        <Header />
 
-  {/* This is the add coral form */}
-      <Grid item xs={4}>
-        <Paper style={style.coralForm}>
-          <Typography variant="h4">Post New Fragments!</Typography>
-          <Typography variant="subtitle1">
-            Fill out the form to offer new fragments for buyers to view:
-          </Typography>
-          <CoralForm />
-          <label htmlFor="contained-button-file">
-            <Button variant="contained" component="span" className="">
-              Upload Image
-            </Button>
-          </label>
-        </Paper>
-      </Grid>
-    {/* End of add coral form */}
-    <Grid item xs={4}>
-        <Paper style={style.imgPaper}>
-         
-        </Paper>
-      </Grid>
+      {/* This is the profile information */}
+        <Grid container spacing={8}>
+          <Grid item xs={4}>
+            <Paper style={style.profilePaper}>
+              <Avatar alt="Profile pic" src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" className={classes.avatar} />
+              <Typography variant="h6">Aquarist1</Typography>
+              <Typography variant="p">email@gmail.com</Typography>
+              <Typography variant="p">paypal name</Typography>
+            </Paper>
+          </Grid>
+      {/* End of profile information */}
 
-   
-
-    </Grid>
-    <Grid container spacing={0}>
-      <Grid item xs={12}>
-        <Paper style={style.Paper}>
-          <Typography variant="h1">
+      {/* This is the add coral form */}
+          <Grid item xs={4}>
+            <Paper style={style.coralForm}>
+              <Typography variant="h4">Post New Fragments!</Typography>
+              <Typography variant="subtitle1">
+                Fill out the form to offer new fragments for buyers to view:
+              </Typography>
+              <CoralForm />
+              <label htmlFor="contained-button-file">
+                <Button variant="contained" component="span" className="">
+                  Upload Image
+                </Button>
+              </label>
+            </Paper>
+          </Grid>
+        {/* End of add coral form */}
+        <Grid item xs={4}>
+            <Paper style={style.imgPaper}>
             
-          </Typography>
+            </Paper>
+          </Grid>
+        </Grid>
+
+        <Paper style={style.Paper}>
+        <Grid container spacing={25} style={style.cardGrid}>
+              {cards.map(card => (
+                <Grid item style={style.grid} xs={12} key={card} sm={6} md={4} lg={3}>
+                <Card style={style.card}>
+                  <CardMedia style={style.cardMedia}
+                    image="https://images.pexels.com/photos/920160/pexels-photo-920160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    title="Image title"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Coral Type
+                    </Typography>
+                  </CardContent>
+                </Card>
+              
+            
+          </Grid>
+          
+          ))}
+        </Grid>
         </Paper>
-      </Grid>
-    </Grid>
+        <Footer />
+      </div>
+    </React.Fragment>
+)};
 
+Aquarist.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
-    <Footer />
-  </div>
-);
+export default withStyles(style)(Aquarist)
