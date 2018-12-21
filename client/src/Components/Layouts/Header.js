@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import { fade } from '@material-ui/core/styles/colorManipulator';
-
+import Divider from '@material-ui/core/Divider';
 
 const styles = theme => ({
   appBar: {
@@ -91,6 +90,14 @@ const styles = theme => ({
       width: 200,
     },
   },
+  logoutButton: {
+    input: {
+    display: 'none'
+    }
+  },
+  buttonLink: {
+    textDecoration: 'none'
+  },
   //This will make the app bar appear below the bar
   paper: {
     height: 'calc(100% - 64px)',
@@ -141,21 +148,20 @@ class Header extends React.Component {
                   <ListItemLink href="/mainlayout">
                     <ListItemText className={classes.listItem} primary="Home" />
                   </ListItemLink>
-                  <ListItemLink href="/signin">
-                    <ListItemText primary="Sign In" />
-                  </ListItemLink>                 
+                  <Divider />
                   <ListItemLink href="/">
                     <ListItemText primary="Market" />
                   </ListItemLink>
+                  <Divider />
+                  <Divider />
                   <ListItemLink href="/user">
                     <ListItemText primary="Profile" />
                   </ListItemLink>
-                  <ListItemLink href="/createnewaccount">
-                    <ListItemText primary="Sign Up" />
-                  </ListItemLink>
+                  <Divider />
                   <ListItemLink href="/mainlayout">
                     <ListItemText primary="Logout" />
                   </ListItemLink>
+                  <Divider />
                 </List>
               </div>
             </div>
@@ -164,7 +170,7 @@ class Header extends React.Component {
           <Typography className={classes.title} variant="h6" color="inherit" noWrap>
               Reef Rebuilders
           </Typography>
-          {/* This is the search bar */}
+              {/* This is the search bar */}
               <div className={classes.search}>
                 <div className={classes.searchIcon}>
                   <SearchIcon />
@@ -177,10 +183,18 @@ class Header extends React.Component {
                   }}
                 />
               </div>
-            
+              {/* This is the logout button */}
+              <div>
+                <Link to="/signin" style={{textDecoration: 'none'}}>
+                  <Button style={styles.logoutButton} variant="contained" color="inherit">
+                      Log Out
+                  </Button>
+                </Link>
+              </div>
         </Toolbar>
       </AppBar>
       ); 
   };
 }
+
 export default withStyles(styles)(Header);
