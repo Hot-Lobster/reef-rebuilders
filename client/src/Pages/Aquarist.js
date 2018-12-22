@@ -6,26 +6,27 @@ import {
   Paper,
   Typography,
   Card,
+  CarHeader,
   CardMedia,
   CardContent,
   Button,
   withStyles,
   Avatar,
+  CardHeader,
 } from "@material-ui/core";
 import PropTypes from 'prop-types';
 import CoralForm from '../Components/CoralForm';
-import defaultpic from '../Images/defaultpic.png'
+import defaultpic from '../Images/defaultpic.png';
+import defaultCoral from '../Images/defaultCoral.jpeg';
+import FilePondInput from '../Components/FilePondInput';
 
 const style = {
-  Paper: { padding: 20, marginTop: 10, marginBottom: 5, marginLeft: 10, marginRight: 10 },
-  profilePaper: { padding: 20, marginTop: 10, marginBottom: 5, marginLeft: 10, marginRight: 5, height: 350 },
-  coralForm: { padding: 20, marginTop: 10, marginBottom: 5, marginRight: 5, height: 350},
   avatar: {margin: 10, width: 100, height: 100}, 
   cardGrid: {
     padding: 10
   },
   grid: {
-    marginTop: 20,
+    marginTop: 50,
     marginBottom: 20
 
   },
@@ -42,17 +43,44 @@ const style = {
   cardContent: {
     flexGrow: 1
   },
-  imgPaper: { 
+  Paper: { 
+    padding: 20,
+    marginTop: 10, 
+    marginBottom: 5, 
+    marginLeft: 10, 
+    marginRight: 10, 
+    height:'100%' 
+  },
+  profilePaper: { 
+    padding: 20, 
+    marginTop: 10, 
+    marginBottom: 5, 
+    marginLeft: 10, 
+    marginRight: 5, 
+    height: "100%"
+  },
+  coralPaper: { 
+    padding: 20, 
+    marginTop: 10, 
+    marginBottom: 5, 
+    marginRight: 5, 
+    height: "100%"
+  },
+  recentCard: {
+    padding: 20,
+    marginTop: 10,
+    marginRight: 5,
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+  },
+  recentPaper: { 
     padding: 20,
     marginTop: 10,
     marginBottom: 5,
     marginLeft: 0,
     marginRight: 5, 
-    height: 350,
-    backgroundImage: `url(https://images.pexels.com/photos/920160/pexels-photo-920160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)`,
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover'
+    height: "100%",
   }
 
 };
@@ -81,24 +109,41 @@ function Aquarist(props) {
 
       {/* This is the add coral form */}
           <Grid item xs={4}>
-            <Paper style={style.coralForm}>
+            <Paper style={style.coralPaper}>
               <Typography variant="h4">Post New Fragments!</Typography>
               <Typography variant="subtitle1">
                 Fill out the form to offer new fragments for buyers to view:
               </Typography>
               <CoralForm />
+              <FilePondInput />
               <label htmlFor="contained-button-file">
                 <Button variant="contained" component="span" className="">
-                  Upload Image
+                  Submit Entry
                 </Button>
               </label>
             </Paper>
           </Grid>
         {/* End of add coral form */}
         <Grid item xs={4}>
-            <Paper style={style.imgPaper}>
-            
-            </Paper>
+            {/* <Paper style={style.recentPaper}> */}
+              <Card style={style.recentCard}>
+                <CardHeader
+                  title="Your most recently uploaded coral"
+                />
+                <CardMedia style={style.recentPaper}
+                  image={defaultCoral}
+                  title="Image title"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Coral Type
+                  </Typography>
+                  <Typography gutterBottom variant="h6" component="h2">
+                   Frags: #
+                  </Typography>
+                </CardContent>
+              </Card>
+            {/* </Paper> */}
           </Grid>
         </Grid>
 
@@ -108,7 +153,7 @@ function Aquarist(props) {
                 <Grid item style={style.grid} xs={12} key={card} sm={6} md={4} lg={3}>
                 <Card style={style.card}>
                   <CardMedia style={style.cardMedia}
-                    image="https://images.pexels.com/photos/920160/pexels-photo-920160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    image={defaultCoral}
                     title="Image title"
                   />
                   <CardContent>
@@ -116,9 +161,7 @@ function Aquarist(props) {
                       Coral Type
                     </Typography>
                   </CardContent>
-                </Card>
-              
-            
+                </Card> 
           </Grid>
           
           ))}
