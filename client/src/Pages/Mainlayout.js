@@ -9,7 +9,6 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
-import Divider from '@material-ui/core/Divider';
 import Header from "../Components/Layouts/Header";
 import Footer from "../Components/Layouts/Footer";
 import gnips from '../Images/gnips.jpg';
@@ -114,7 +113,7 @@ function Blog(props) {
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
                     Featured Coral:
                   </Typography>
-                  <Typography variant="h5" color="inherit" paragraph>
+                  <Typography variant="h1" color="inherit" paragraph>
                     "Gorilla Nipple Zoanthids"
                   </Typography>
                 </div>
@@ -156,6 +155,7 @@ function Blog(props) {
             ))}
           </Grid>
           {/* End sub featured posts */}
+          
           {/* <Grid container spacing={40} className={classes.mainGrid}> */}
             {/* Main content */}
             {/* <Grid item xs={12} md={8}>
