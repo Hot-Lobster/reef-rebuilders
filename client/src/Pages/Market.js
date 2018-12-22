@@ -75,10 +75,10 @@ const styles = theme => ({
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing.unit * 6
-  }
+  },
 });
 
-let cards = [0,1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12];
+// let cards = [0,1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12];
 
 function Market(props) {
   const { classes } = props;
@@ -125,8 +125,8 @@ function Market(props) {
         <div className={classNames(classes.layout, classes.cardGrid)}>
           {/* End hero unit */}
           <Grid container spacing={40}>
-            {cards.map(card => (
-              <Grid item key={card} sm={6} md={4} lg={3}>
+            {/* {cards.map(card => ( */}
+              <Grid item sm={6} md={4} lg={3}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
@@ -135,10 +135,10 @@ function Market(props) {
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Coral Specimen
+                    Tabling Acropora
                     </Typography>
-                    <Typography>Coral description</Typography>
-                    <Typography>frags: #</Typography>
+                    <Typography></Typography>
+                    <Typography>frags: 3</Typography>
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">
@@ -150,7 +150,175 @@ function Market(props) {
                   </CardActions>
                 </Card>
               </Grid>
-            ))}
+              <Grid item sm={6} md={4} lg={3}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://i.pinimg.com/736x/0d/77/43/0d77435b785d4a9a0391c0eed37bf50a.jpg"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Galaxia
+                    </Typography>
+                    <Typography></Typography>
+                    <Typography>frags: 8</Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Contact Seller
+                    </Button>
+                    {/* <Button size="small" color="primary">
+                      Add to Cart
+                    </Button> */}
+                  </CardActions>
+                </Card>
+              </Grid>
+              <Grid item sm={6} md={4} lg={3}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://fishybusinessaquatics.com/wp-content/uploads/2017/10/Galaxia-650x650.webp"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Branching Acropora
+                    </Typography>
+                    <Typography></Typography>
+                    <Typography>frags: 5</Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Contact Seller
+                    </Button>
+                    {/* <Button size="small" color="primary">
+                      Add to Cart
+                    </Button> */}
+                  </CardActions>
+                </Card>
+              </Grid>
+              <Grid item sm={6} md={4} lg={3}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://i.pinimg.com/736x/b5/33/26/b53326cfdeb7be1538aad8abee650103.jpg"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Pink Lemonade 
+                    </Typography>
+                    <Typography></Typography>
+                    <Typography>frags: 2</Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Contact Seller
+                    </Button>
+                    {/* <Button size="small" color="primary">
+                      Add to Cart
+                    </Button> */}
+                  </CardActions>
+                </Card>
+              </Grid>
+              <Grid item sm={6} md={4} lg={3}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://i.pinimg.com/originals/5d/0c/19/5d0c190033554864c2a3ac913aa8341e.jpg"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Watermelon Bambam
+                    </Typography>
+                    <Typography></Typography>
+                    <Typography>frags: 6</Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Contact Seller
+                    </Button>
+                    {/* <Button size="small" color="primary">
+                      Add to Cart
+                    </Button> */}
+                  </CardActions>
+                </Card>
+              </Grid>
+              <Grid item sm={6} md={4} lg={3}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://i.pinimg.com/564x/0a/f0/38/0af03861bc28b309336597748c3787ab.jpg"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Zoanthid
+                    </Typography>
+                    <Typography></Typography>
+                    <Typography>frags: 13</Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Contact Seller
+                    </Button>
+                    {/* <Button size="small" color="primary">
+                      Add to Cart
+                    </Button> */}
+                  </CardActions>
+                </Card>
+              </Grid>
+              <Grid item sm={6} md={4} lg={3}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://i.pinimg.com/736x/17/3c/28/173c28c4dbc607086078e5eb57ecc90a--coral-frags-coral-reefs.jpg"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Rainbow Tenuis
+                    </Typography>
+                    <Typography></Typography>
+                    <Typography>frags: 2</Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Contact Seller
+                    </Button>
+                    {/* <Button size="small" color="primary">
+                      Add to Cart
+                    </Button> */}
+                  </CardActions>
+                </Card>
+              </Grid>
+              <Grid item sm={6} md={4} lg={3}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://cdn.bulbagarden.net/upload/thumb/3/38/346Cradily.png/1200px-346Cradily.png"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Cradily
+                    </Typography>
+                    <Typography>Totally normal coral specimin</Typography>
+                    <Typography>frags: 99</Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Contact Seller
+                    </Button>
+                    {/* <Button size="small" color="primary">
+                      Add to Cart
+                    </Button> */}
+                  </CardActions>
+                </Card>
+              </Grid>
+          
           </Grid>
         </div>
       </main>
