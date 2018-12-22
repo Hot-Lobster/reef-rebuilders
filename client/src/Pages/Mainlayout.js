@@ -162,10 +162,18 @@ function Blog(props) {
           <Grid container spacing={40}>
             <Grid item xs={12}>
               <Paper style={styles.missionStatementContent}>
-                  <Typography variant="subtitle1">Words</Typography>
+                  <Typography variant="h6">
+                      Reef Rebuilders was created with the goal of connecting aquarists and conservationists
+                      and create a hub where coral fragments can be traded and displayed. There are plenty of
+                      coral enthusiasts accross the world looking for specific kinds of coral and with the help
+                      of this app, they can easily browse a marketplace full of user-submitted coral fragmentss.
+                      Reef Rebuilders makes finding or offering coral fragments easy, granting users the information
+                      needed to connect and agree on pricing and logistics. This app creates a useful environment
+                      for sharing coral while at the same time supporting the environmental cause of protecting coral 
+                      reefs from extinction.
+                  </Typography>
               </Paper>
             </Grid>
-
           </Grid>
           {/* End sub featured posts */}
           

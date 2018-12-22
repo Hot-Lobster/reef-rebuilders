@@ -87,7 +87,7 @@ class TextFields extends React.Component {
 
           multiline
           rows="4"
-          defaultValue="Coral Description"
+          placeholder="Coral Description"
           className={classes.textField}
           margin="normal"
         />
