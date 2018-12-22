@@ -65,7 +65,7 @@ class TextFields extends React.Component {
         <TextField
           required
           id="standard-required"
-          defaultValue="Coral Name"
+          placeholder="Coral Name"
           className={classes.textField}
           margin="normal"
         />

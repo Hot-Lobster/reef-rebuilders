@@ -152,7 +152,7 @@ class Header extends React.Component {
                   <ListItemLink href="/">
                     <ListItemText primary="Market" />
                   </ListItemLink>
-                  <Divider />
+                  {/* <Divider /> */}
                   <Divider />
                   <ListItemLink href="/user">
                     <ListItemText primary="Profile" />
