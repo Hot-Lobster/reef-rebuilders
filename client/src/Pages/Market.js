@@ -91,7 +91,7 @@ function Market(props) {
             >
               Coral Marketplace
             </Typography>
-            <Typography
+            {/* <Typography
               variant="h6"
               align="center"
               color="textSecondary"
@@ -112,7 +112,7 @@ function Market(props) {
                   </Button>
                 </Grid>
               </Grid>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className={classNames(classes.layout, classes.cardGrid)}>
