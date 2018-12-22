@@ -4,12 +4,12 @@ import { AppBar, Toolbar, Typography } from "@material-ui/core/";
 // import MenuIcon from "@material-ui/icons";
 
 export default props => (
-  <AppBar position="static">
+  <AppBar position="static" style={{ marginTop: 10 }}>
     <Toolbar>
       <Typography
         variant="h8"
         color="inherit"
-        style={{ textAlign: "center", margin: "auto",}}
+        style={{ textAlign: "center", margin: "auto" }}
       >
          Reef Rebuilders  Inc. &copy; 2018, All Rights Reserved 
       </Typography>

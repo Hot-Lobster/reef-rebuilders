@@ -11,6 +11,8 @@ import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import Header from "../Components/Layouts/Header";
 import Footer from "../Components/Layouts/Footer";
+//import mktbackground from "../Images/mktbackground.jpeg";
+// import User from "../../../models/User";
 
 const styles = theme => ({
   appBar: {
@@ -31,12 +33,17 @@ const styles = theme => ({
   },
   heroUnit: {
     backgroundColor: theme.palette.background.paper,
-    background: "linear-gradient(to right bottom, #430089, #82ffa1)"
+    // background: "linear-gradient(to right bottom, #430089, #82ffa1)"
+    height: 300,
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundImage: `url(https://images.pexels.com/photos/1076887/pexels-photo-1076887.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1078&w=1920)`
   },
   heroContent: {
     maxWidth: 600,
     margin: "0 auto",
-    padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`
+    padding: `${theme.spacing.unit * 10}px 0 ${theme.spacing.unit * 8}px`
   },
   heroButtons: {
     marginTop: theme.spacing.unit * 4
@@ -71,7 +78,7 @@ const styles = theme => ({
   }
 });
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+let cards = [0,1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12];
 
 function Market(props) {
   const { classes } = props;
@@ -83,8 +90,8 @@ function Market(props) {
         <div className={classes.heroUnit}>
           <div className={classes.heroContent}>
             <Typography
-              component="h1"
-              variant="h2"
+              component="h2"
+              variant="display3"
               align="center"
               color="textPrimary"
               gutterBottom
@@ -131,14 +138,15 @@ function Market(props) {
                       Coral Specimen
                     </Typography>
                     <Typography>Coral description</Typography>
+                    <Typography>frags: #</Typography>
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">
                       Contact Seller
                     </Button>
-                    <Button size="small" color="primary">
+                    {/* <Button size="small" color="primary">
                       Add to Cart
-                    </Button>
+                    </Button> */}
                   </CardActions>
                 </Card>
               </Grid>
