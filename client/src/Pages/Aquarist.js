@@ -8,14 +8,13 @@ import {
   Card,
   CardMedia,
   CardContent,
-  TextField,
   Button,
   withStyles,
   Avatar,
 } from "@material-ui/core";
 import PropTypes from 'prop-types';
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import CoralForm from '../Components/CoralForm';
+import defaultpic from '../Images/defaultpic.png'
 
 const style = {
   Paper: { padding: 20, marginTop: 10, marginBottom: 5, marginLeft: 10, marginRight: 10 },
@@ -72,7 +71,7 @@ function Aquarist(props) {
         <Grid container spacing={8}>
           <Grid item xs={4}>
             <Paper style={style.profilePaper}>
-              <Avatar alt="Profile pic" src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" className={classes.avatar} />
+              <Avatar alt="Profile pic" src={defaultpic} className={classes.avatar} />
               <Typography variant="h6">Aquarist1</Typography>
               <Typography variant="p">email@gmail.com</Typography>
               <Typography variant="p">paypal name</Typography>
