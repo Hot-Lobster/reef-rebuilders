@@ -102,12 +102,12 @@ function Aquarist(props) {
         <Header />
 
       {/* This is the profile information */}
-        <Grid container spacing={8}>
+        <Grid container spacing={8} style={{ marginBottom: 55 }}>
           <Grid item xs={4}>
             <Paper style={style.profilePaper}>
               <Avatar alt="Profile pic" src={Oops} className={classes.avatar} />
-              <Typography variant="h4">Aquarist1</Typography>
-              <Typography variant="h5">email@gmail.com</Typography>
+              <Typography variant="h4">Ravi</Typography>
+              <Typography variant="h5">Ravi@Ravi.com</Typography>
               {/* <Typography variant="h5">paypal name</Typography> */}
             </Paper>
           </Grid>
