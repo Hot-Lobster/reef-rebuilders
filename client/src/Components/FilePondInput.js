@@ -70,30 +70,15 @@ class FilePondInput extends React.Component {
     }, () => {
       //Success
       this.setState({
-        message: `Upload Success`,
-        picture: task.snapshot.downloadURL
-      })
+        message: `Upload Success`
+      });
 
-      storageRef.getMetadata().then((metadata) => {
-        // Metadata now contains the metadata for 'filepond/${file.name}'
-        let metadataFile = {
-          name: metadata.name,
-          size: metadata.size,
-          contentType: metadata.contentType,
-          fullPath: metadata.fullPath,
-        }
-
-        const databaseRef = firebase.database().ref('/filepond');
-
-        databaseRef.push({
-          metadataFile
-        });
-
-      }).catch(function (error) {
-        // this.setState({
-        //   message: `Upload error : ${error.message}`
-        // })
-        console.log(error);
+      console.log("Fetching download URL...")
+      task.snapshot.ref.getDownloadURL().then((downloadURL) => {
+        console.log(downloadURL);
+        this.setState({
+          downloadURL
+        })
       });
     });
   }
@@ -102,8 +87,14 @@ class FilePondInput extends React.Component {
     return (
 
       <FilePond ref={ref => this.pond = ref}
-        server={{ process: this.handleProcessing.bind(this) }}
-        oninit={() => this.handleInit()}>
+        // server={{ process: this.handleProcessing.bind(this) }}
+        instantUpload={false}
+        oninit={() => this.handleInit()}
+        onupdatefiles={(fileItems) => {
+          this.setState({
+            files: fileItems.map(fileItem => fileItem.file)
+          });
+        }}>
 
         {this.state.files.map(file => (
           <File key={file} source={file} />

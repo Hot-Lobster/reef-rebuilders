@@ -20,7 +20,10 @@ import defaultCoral from '../Images/defaultCoral.jpeg';
 import FilePondInput from '../Components/FilePondInput';
 
 const style = {
-  avatar: {margin: 10, width: 100, height: 100}, 
+  avatar: {margin: 10, 
+    width: 250, 
+    height: 250
+  }, 
   cardGrid: {
     padding: 10
   },
@@ -116,7 +119,7 @@ function Aquarist(props) {
               <CoralForm />
               <FilePondInput />
               <label htmlFor="contained-button-file">
-                <Button variant="contained" component="span" className="">
+                <Button variant="contained" type="submit" component="span" className="">
                   Submit Entry
                 </Button>
               </label>
@@ -146,26 +149,26 @@ function Aquarist(props) {
           </Grid>
         </Grid>
 
-        <Paper style={style.Paper}>
-        <Grid container spacing={25} style={style.cardGrid}>
-              {cards.map(card => (
-                <Grid item style={style.grid} xs={12} key={card} sm={6} md={4} lg={3}>
-                <Card style={style.card}>
-                  <CardMedia style={style.cardMedia}
-                    image={defaultCoral}
-                    title="Image title"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Coral Type
-                    </Typography>
-                  </CardContent>
-                </Card> 
+          <Paper style={style.Paper}>
+          <Grid container spacing={25} style={style.cardGrid}>
+                {cards.map(card => (
+                  <Grid item style={style.grid} xs={12} key={card} sm={6} md={4} lg={3}>
+                  <Card style={style.card}>
+                    <CardMedia style={style.cardMedia}
+                      image={defaultCoral}
+                      title="Image title"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        Coral Type
+                      </Typography>
+                    </CardContent>
+                  </Card> 
+            </Grid>
+            
+            ))}
           </Grid>
-          
-          ))}
-        </Grid>
-        </Paper>
+          </Paper>
         <Footer />
       </div>
     </React.Fragment>

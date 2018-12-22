@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
+// Save a reference to the Schema constructor
 var Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new UserSchema object
@@ -9,11 +10,10 @@ var UserSchema = new Schema({
   email: { type: String, required: true },
   posts: [
       {
-        _id: { type: String, required: true },
-        coralType: { type: String, required: true },        
-        numFrags: { type: String, required: true },
-        image: { type: String, required: true },                
-        description: { type: String, required: true }        
+        // Store ObjectIds in the array
+        type: Schema.Types.ObjectId,
+        // The ObjectIds will refer to the ids in the Note model
+        ref: "Post"   
       }
   ]
 });

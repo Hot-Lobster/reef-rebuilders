@@ -50,7 +50,7 @@ const styles = theme => ({
   missionStatementContent: {
     padding: 20,
     height: 350,
-    marginTop: 20,
+    marginTop: 10,
     marginBottom: 20
   },
   mainGrid: {
@@ -118,7 +118,7 @@ function Blog(props) {
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
                     Featured Coral:
                   </Typography>
-                  <Typography variant="h1" color="inherit" paragraph>
+                  <Typography variant="h3" color="inherit" paragraph>
                     "Gorilla Nipple Zoanthids"
                   </Typography>
                 </div>
@@ -158,23 +158,25 @@ function Blog(props) {
                 </Card>
               </Grid>
             ))}
-          </Grid>
-          <Grid container spacing={40}>
-            <Grid item xs={12}>
-              <Paper style={styles.missionStatementContent}>
-                  <Typography variant="h6">
-                      Reef Rebuilders was created with the goal of connecting aquarists and conservationists
-                      and create a hub where coral fragments can be traded and displayed. There are plenty of
-                      coral enthusiasts accross the world looking for specific kinds of coral and with the help
-                      of this app, they can easily browse a marketplace full of user-submitted coral fragmentss.
-                      Reef Rebuilders makes finding or offering coral fragments easy, granting users the information
-                      needed to connect and agree on pricing and logistics. This app creates a useful environment
-                      for sharing coral while at the same time supporting the environmental cause of protecting coral 
-                      reefs from extinction.
-                  </Typography>
-              </Paper>
+
+              <Grid item xs={12}>
+                <Paper style={styles.missionStatementContent}>
+                    <Typography variant="h5">
+                        Reef Rebuilders was created with the goal of connecting aquarists and conservationists
+                        and to create a hub where coral fragments can be traded and displayed.
+                    </Typography>
+                    <Typography variant="h6">
+                        There are plenty of
+                        coral enthusiasts across the world looking for specific kinds of coral and with the help
+                        of this app, they can easily browse a marketplace full of user-submitted coral fragments.
+                        Reef Rebuilders makes finding or offering coral fragments easy, granting users the information
+                        needed to connect and agree on pricing and logistics. This app creates a useful environment
+                        for sharing coral while at the same time supporting the environmental cause of protecting coral 
+                        reefs from extinction.
+                    </Typography>
+                </Paper>
+              </Grid>
             </Grid>
-          </Grid>
           {/* End sub featured posts */}
           
           {/* <Grid container spacing={40} className={classes.mainGrid}> */}
