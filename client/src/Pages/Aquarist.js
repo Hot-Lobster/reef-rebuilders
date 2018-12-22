@@ -6,13 +6,12 @@ import {
   Paper,
   Typography,
   Card,
-  CarHeader,
+  CardHeader,
   CardMedia,
   CardContent,
   Button,
   withStyles,
   Avatar,
-  CardHeader,
 } from "@material-ui/core";
 import PropTypes from 'prop-types';
 import CoralForm from '../Components/CoralForm';

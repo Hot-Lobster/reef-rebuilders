@@ -2,6 +2,9 @@
   "name": "reef-rebuilders",
   "version": "1.0.0",
   "description": "reef conector",
+  "engines": {
+    "node": "8.11.3"
+  },
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
