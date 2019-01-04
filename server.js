@@ -20,6 +20,9 @@ app.use(express.static("/client/public"));
 //Add routes, both API and view
 app.use("/", routes);
 
+// To stop the, "DeprecationWarning: collection.ensureIndex is deprecated"
+mongoose.set('useCreateIndex', true);
+
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/ReefAppDB",

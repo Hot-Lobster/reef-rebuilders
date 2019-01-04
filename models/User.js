@@ -4,17 +4,18 @@ var Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
+// Tried adding in unique for the username and email
 var UserSchema = new Schema({
-  username: { type: String, required: true },
+  username: { type: String, unique: true, required: true },
   password: { type: String, required: true },
-  email: { type: String, required: true },
+  email: { type: String, unique: true, required: true },
   posts: [
-      {
-        // Store ObjectIds in the array
-        type: Schema.Types.ObjectId,
-        // The ObjectIds will refer to the ids in the Note model
-        ref: "Post"   
-      }
+    {
+      // Store ObjectIds in the array
+      type: Schema.Types.ObjectId,
+      // The ObjectIds will refer to the ids in the Post model
+      ref: "Post"
+    }
   ]
 });
 
